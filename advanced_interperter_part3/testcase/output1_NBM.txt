@@ -1,0 +1,75 @@
+Enter the row_access_delay: 10
+Enter the col_access_delay: 2
+
+Every cycle description
+
+cycle : 1
+Executed instruction: addi $s0 $zero 1000
+Modified regitsers: $s0 = 1000
+
+cycle : 2
+Executed instruction: addi $s1 $zero 1024
+Modified regitsers: $s1 = 1024
+
+cycle : 3
+Executed instruction: addi $t0 $zero 1
+Modified regitsers: $t0 = 1
+
+cycle : 4
+Executed instruction: sw $t0 0($s0)
+DRAM Request issued: Memory Location: 1000 Row buffer: -1
+
+cycle : 5
+Executed instruction: addi $t1 $zero 2
+Modified regitsers: $t1 = 2
+
+cycle : 6
+Executed instruction: add $t3 $t3 $t2
+Modified regitsers: $t3 = 0
+
+cycle : 5-14
+DRAM: Activate row 0
+
+cycle : 15-16
+DRAM: Column access
+Modified Memory Location: 1000 = 1
+
+cycle : 17
+Executed instruction: lw $t2 0($s0)
+DRAM Request issued: Memory Location: 1000 Row buffer: 0
+
+cycle : 18-19
+DRAM: Column request
+Modified registers: $t2 = 1
+
+cycle : 20
+Executed instruction: add $t3 $t3 $t2
+Modified regitsers: $t3 = 1
+
+cycle : 21
+Executed instruction: addi $s2 $zero 1028
+Modified regitsers: $s2 = 1028
+
+cycle : 22
+Executed instruction: sw $t3 0($s2)
+DRAM Request issued: Memory Location: 1028 Row buffer: 0
+
+cycle : 23-32
+DRAM: Writeback row 0
+
+cycle : 33-42
+DRAM: Activate row 1
+
+cycle : 43-44
+DRAM: Column access
+Modified Memory Location: 1028 = 1
+
+
+Memory content at the end of the execution:
+
+1000-1003:1
+1028-1031:1
+
+Total execution time in clock cycle : 44
+
+No of row buffer updates : 5

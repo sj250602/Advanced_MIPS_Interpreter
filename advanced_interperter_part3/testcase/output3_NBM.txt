@@ -1,0 +1,12 @@
+Enter the row_access_delay: 10
+Enter the col_access_delay: 2
+
+Every cycle description
+
+
+Memory content at the end of the execution:
+
+
+Total execution time in clock cycle : 0
+
+No of row buffer updates : 0

@@ -1,0 +1,810 @@
+Enter the row_access_delay: 10
+Enter the col_access_delay: 2
+
+Every cycle description
+
+cycle : 1
+Executed instruction: addi $s0 $zero 1000
+Modified regitsers: $s0 = 1000
+
+cycle : 2
+Executed instruction: addi $s1 $zero 1024
+Modified regitsers: $s1 = 1024
+
+cycle : 3
+Executed instruction: addi $t0 $zero 1
+Modified regitsers: $t0 = 1
+
+cycle : 4
+Executed instruction: sw $t0 0($s0)
+DRAM Request issued: Memory Location: 1000 Row buffer: -1
+
+cycle : 5
+Executed instruction: addi $t1 $zero 2
+Modified regitsers: $t1 = 2
+
+cycle : 6
+Executed instruction: add $t3 $t3 $t2
+Modified regitsers: $t3 = 0
+
+cycle : 5-14
+DRAM: Activate row 0
+
+cycle : 15-16
+DRAM: Column access
+Modified Memory Location: 1000 = 1
+
+cycle : 17
+Executed instruction: lw $t2 0($s0)
+DRAM Request issued: Memory Location: 1000 Row buffer: 0
+
+cycle : 18-19
+DRAM: Column request
+Modified registers: $t2 = 1
+
+cycle : 20
+Executed instruction: add $t3 $t3 $t2
+Modified regitsers: $t3 = 1
+
+cycle : 21
+Executed instruction: addi $s2 $zero 1028
+Modified regitsers: $s2 = 1028
+
+cycle : 22
+Executed instruction: sw $t3 0($s2)
+DRAM Request issued: Memory Location: 1028 Row buffer: 0
+
+cycle : 23-32
+DRAM: Writeback row 0
+
+cycle : 33-42
+DRAM: Activate row 1
+
+cycle : 43-44
+DRAM: Column access
+Modified Memory Location: 1028 = 1
+
+
+Memory content at the end of the execution:
+
+1000-1003:1
+1028-1031:1
+
+Total execution time in clock cycle : 44
+
+No of row buffer updates : 5
+
+E:\COL SOURAV\MIPS\2019CS10404_MINOR>t.exe
+Enter the path of MIPS file: testcase2_NBM.txt
+Enter the row_access_delay: 10
+Enter the col_access_delay: 2
+
+Every cycle description
+
+cycle : 1
+Executed instruction: addi $s0 $zero 1000
+Modified regitsers: $s0 = 1000
+
+cycle : 2
+Executed instruction: addi $s1 $zero 0
+Modified regitsers: $s1 = 0
+
+cycle : 3
+Executed instruction: addi $s2 $zero 10
+Modified regitsers: $s2 = 10
+
+cycle : 4
+Executed instruction: addi $t1 $zero 0
+Modified regitsers: $t1 = 0
+
+cycle : 5
+Executed instruction: addi $t1 $t1 1
+Modified regitsers: $t1 = 1
+
+cycle : 6
+Executed instruction: sw $t1 0($s0)
+DRAM Request issued: Memory Location: 1000 Row buffer: -1
+
+cycle : 7-16
+DRAM: Activate row 0
+
+cycle : 17-18
+DRAM: Column access
+Modified Memory Location: 1000 = 1
+
+cycle : 19
+Executed instruction: addi $s0 $s0 4
+Modified regitsers: $s0 = 1004
+
+cycle : 20
+Executed instruction: addi $s1 $s1 1
+Modified regitsers: $s1 = 1
+
+cycle : 21
+Executed instruction: slt $s3 $s1 $s2
+Modified regitsers: $s3 = 1
+
+cycle : 22
+Executed instruction: bne $s3 $zero initloop
+
+cycle : 23
+Executed instruction: addi $t1 $t1 1
+Modified regitsers: $t1 = 2
+
+cycle : 24
+Executed instruction: sw $t1 0($s0)
+DRAM Request issued: Memory Location: 1004 Row buffer: 0
+
+cycle : 25-26
+DRAM: Column access
+Modified Memory Location: 1004 = 2
+
+cycle : 27
+Executed instruction: addi $s0 $s0 4
+Modified regitsers: $s0 = 1008
+
+cycle : 28
+Executed instruction: addi $s1 $s1 1
+Modified regitsers: $s1 = 2
+
+cycle : 29
+Executed instruction: slt $s3 $s1 $s2
+Modified regitsers: $s3 = 1
+
+cycle : 30
+Executed instruction: bne $s3 $zero initloop
+
+cycle : 31
+Executed instruction: addi $t1 $t1 1
+Modified regitsers: $t1 = 3
+
+cycle : 32
+Executed instruction: sw $t1 0($s0)
+DRAM Request issued: Memory Location: 1008 Row buffer: 0
+
+cycle : 33-34
+DRAM: Column access
+Modified Memory Location: 1008 = 3
+
+cycle : 35
+Executed instruction: addi $s0 $s0 4
+Modified regitsers: $s0 = 1012
+
+cycle : 36
+Executed instruction: addi $s1 $s1 1
+Modified regitsers: $s1 = 3
+
+cycle : 37
+Executed instruction: slt $s3 $s1 $s2
+Modified regitsers: $s3 = 1
+
+cycle : 38
+Executed instruction: bne $s3 $zero initloop
+
+cycle : 39
+Executed instruction: addi $t1 $t1 1
+Modified regitsers: $t1 = 4
+
+cycle : 40
+Executed instruction: sw $t1 0($s0)
+DRAM Request issued: Memory Location: 1012 Row buffer: 0
+
+cycle : 41-42
+DRAM: Column access
+Modified Memory Location: 1012 = 4
+
+cycle : 43
+Executed instruction: addi $s0 $s0 4
+Modified regitsers: $s0 = 1016
+
+cycle : 44
+Executed instruction: addi $s1 $s1 1
+Modified regitsers: $s1 = 4
+
+cycle : 45
+Executed instruction: slt $s3 $s1 $s2
+Modified regitsers: $s3 = 1
+
+cycle : 46
+Executed instruction: bne $s3 $zero initloop
+
+cycle : 47
+Executed instruction: addi $t1 $t1 1
+Modified regitsers: $t1 = 5
+
+cycle : 48
+Executed instruction: sw $t1 0($s0)
+DRAM Request issued: Memory Location: 1016 Row buffer: 0
+
+cycle : 49-50
+DRAM: Column access
+Modified Memory Location: 1016 = 5
+
+cycle : 51
+Executed instruction: addi $s0 $s0 4
+Modified regitsers: $s0 = 1020
+
+cycle : 52
+Executed instruction: addi $s1 $s1 1
+Modified regitsers: $s1 = 5
+
+cycle : 53
+Executed instruction: slt $s3 $s1 $s2
+Modified regitsers: $s3 = 1
+
+cycle : 54
+Executed instruction: bne $s3 $zero initloop
+
+cycle : 55
+Executed instruction: addi $t1 $t1 1
+Modified regitsers: $t1 = 6
+
+cycle : 56
+Executed instruction: sw $t1 0($s0)
+DRAM Request issued: Memory Location: 1020 Row buffer: 0
+
+cycle : 57-58
+DRAM: Column access
+Modified Memory Location: 1020 = 6
+
+cycle : 59
+Executed instruction: addi $s0 $s0 4
+Modified regitsers: $s0 = 1024
+
+cycle : 60
+Executed instruction: addi $s1 $s1 1
+Modified regitsers: $s1 = 6
+
+cycle : 61
+Executed instruction: slt $s3 $s1 $s2
+Modified regitsers: $s3 = 1
+
+cycle : 62
+Executed instruction: bne $s3 $zero initloop
+
+cycle : 63
+Executed instruction: addi $t1 $t1 1
+Modified regitsers: $t1 = 7
+
+cycle : 64
+Executed instruction: sw $t1 0($s0)
+DRAM Request issued: Memory Location: 1024 Row buffer: 0
+
+cycle : 65-74
+DRAM: Writeback row 0
+
+cycle : 75-84
+DRAM: Activate row 1
+
+cycle : 85-86
+DRAM: Column access
+Modified Memory Location: 1024 = 7
+
+cycle : 87
+Executed instruction: addi $s0 $s0 4
+Modified regitsers: $s0 = 1028
+
+cycle : 88
+Executed instruction: addi $s1 $s1 1
+Modified regitsers: $s1 = 7
+
+cycle : 89
+Executed instruction: slt $s3 $s1 $s2
+Modified regitsers: $s3 = 1
+
+cycle : 90
+Executed instruction: bne $s3 $zero initloop
+
+cycle : 91
+Executed instruction: addi $t1 $t1 1
+Modified regitsers: $t1 = 8
+
+cycle : 92
+Executed instruction: sw $t1 0($s0)
+DRAM Request issued: Memory Location: 1028 Row buffer: 1
+
+cycle : 93-94
+DRAM: Column access
+Modified Memory Location: 1028 = 8
+
+cycle : 95
+Executed instruction: addi $s0 $s0 4
+Modified regitsers: $s0 = 1032
+
+cycle : 96
+Executed instruction: addi $s1 $s1 1
+Modified regitsers: $s1 = 8
+
+cycle : 97
+Executed instruction: slt $s3 $s1 $s2
+Modified regitsers: $s3 = 1
+
+cycle : 98
+Executed instruction: bne $s3 $zero initloop
+
+cycle : 99
+Executed instruction: addi $t1 $t1 1
+Modified regitsers: $t1 = 9
+
+cycle : 100
+Executed instruction: sw $t1 0($s0)
+DRAM Request issued: Memory Location: 1032 Row buffer: 1
+
+cycle : 101-102
+DRAM: Column access
+Modified Memory Location: 1032 = 9
+
+cycle : 103
+Executed instruction: addi $s0 $s0 4
+Modified regitsers: $s0 = 1036
+
+cycle : 104
+Executed instruction: addi $s1 $s1 1
+Modified regitsers: $s1 = 9
+
+cycle : 105
+Executed instruction: slt $s3 $s1 $s2
+Modified regitsers: $s3 = 1
+
+cycle : 106
+Executed instruction: bne $s3 $zero initloop
+
+cycle : 107
+Executed instruction: addi $t1 $t1 1
+Modified regitsers: $t1 = 10
+
+cycle : 108
+Executed instruction: sw $t1 0($s0)
+DRAM Request issued: Memory Location: 1036 Row buffer: 1
+
+cycle : 109-110
+DRAM: Column access
+Modified Memory Location: 1036 = 10
+
+cycle : 111
+Executed instruction: addi $s0 $s0 4
+Modified regitsers: $s0 = 1040
+
+cycle : 112
+Executed instruction: addi $s1 $s1 1
+Modified regitsers: $s1 = 10
+
+cycle : 113
+Executed instruction: slt $s3 $s1 $s2
+Modified regitsers: $s3 = 0
+
+cycle : 114
+Executed instruction: bne $s3 $zero initloop
+
+cycle : 115
+Executed instruction: addi $s0 $zero 1000
+Modified regitsers: $s0 = 1000
+
+cycle : 116
+Executed instruction: addi $s1 $zero 0
+Modified regitsers: $s1 = 0
+
+cycle : 117
+Executed instruction: addi $s3 $zero 0
+Modified regitsers: $s3 = 0
+
+cycle : 118
+Executed instruction: addi $s2 $zero 9
+Modified regitsers: $s2 = 9
+
+cycle : 119
+Executed instruction: lw $t0 0($s0)
+DRAM Request issued: Memory Location: 1000-1003 Row buffer: 1
+
+cycle : 120-129
+DRAM: Writeback row 1
+
+cycle : 130-139
+DRAM: Active row 0
+
+cycle : 140-141
+DRAM: Column request
+Modified registers: $t0 = 1
+
+cycle : 142
+Executed instruction: addi $s0 $s0 4
+Modified regitsers: $s0 = 1004
+
+cycle : 143
+Executed instruction: lw $t1 0($s0)
+DRAM Request issued: Memory Location: 1004 Row buffer: 0
+
+cycle : 144-145
+DRAM: Column request
+Modified registers: $t1 = 2
+
+cycle : 146
+Executed instruction: add $t2 $t0 $t1
+Modified regitsers: $t2 = 3
+
+cycle : 147
+Executed instruction: sw $t2 0($s0)
+DRAM Request issued: Memory Location: 1004 Row buffer: 0
+
+cycle : 148
+Executed instruction: addi $s1 $s1 1
+Modified regitsers: $s1 = 1
+
+cycle : 149
+Executed instruction: slt $s3 $s1 $s2
+Modified regitsers: $s3 = 1
+
+cycle : 148-149
+DRAM: Column access
+Modified Memory Location: 1004 = 3
+
+cycle : 150
+Executed instruction: bne $s3 $zero sumloop
+
+cycle : 151
+Executed instruction: lw $t0 0($s0)
+DRAM Request issued: Memory Location: 1004 Row buffer: 0
+
+cycle : 152-153
+DRAM: Column request
+Modified registers: $t0 = 3
+
+cycle : 154
+Executed instruction: addi $s0 $s0 4
+Modified regitsers: $s0 = 1008
+
+cycle : 155
+Executed instruction: lw $t1 0($s0)
+DRAM Request issued: Memory Location: 1008 Row buffer: 0
+
+cycle : 156-157
+DRAM: Column request
+Modified registers: $t1 = 3
+
+cycle : 158
+Executed instruction: add $t2 $t0 $t1
+Modified regitsers: $t2 = 6
+
+cycle : 159
+Executed instruction: sw $t2 0($s0)
+DRAM Request issued: Memory Location: 1008 Row buffer: 0
+
+cycle : 160
+Executed instruction: addi $s1 $s1 1
+Modified regitsers: $s1 = 2
+
+cycle : 161
+Executed instruction: slt $s3 $s1 $s2
+Modified regitsers: $s3 = 1
+
+cycle : 160-161
+DRAM: Column access
+Modified Memory Location: 1008 = 6
+
+cycle : 162
+Executed instruction: bne $s3 $zero sumloop
+
+cycle : 163
+Executed instruction: lw $t0 0($s0)
+DRAM Request issued: Memory Location: 1008 Row buffer: 0
+
+cycle : 164-165
+DRAM: Column request
+Modified registers: $t0 = 6
+
+cycle : 166
+Executed instruction: addi $s0 $s0 4
+Modified regitsers: $s0 = 1012
+
+cycle : 167
+Executed instruction: lw $t1 0($s0)
+DRAM Request issued: Memory Location: 1012 Row buffer: 0
+
+cycle : 168-169
+DRAM: Column request
+Modified registers: $t1 = 4
+
+cycle : 170
+Executed instruction: add $t2 $t0 $t1
+Modified regitsers: $t2 = 10
+
+cycle : 171
+Executed instruction: sw $t2 0($s0)
+DRAM Request issued: Memory Location: 1012 Row buffer: 0
+
+cycle : 172
+Executed instruction: addi $s1 $s1 1
+Modified regitsers: $s1 = 3
+
+cycle : 173
+Executed instruction: slt $s3 $s1 $s2
+Modified regitsers: $s3 = 1
+
+cycle : 172-173
+DRAM: Column access
+Modified Memory Location: 1012 = 10
+
+cycle : 174
+Executed instruction: bne $s3 $zero sumloop
+
+cycle : 175
+Executed instruction: lw $t0 0($s0)
+DRAM Request issued: Memory Location: 1012 Row buffer: 0
+
+cycle : 176-177
+DRAM: Column request
+Modified registers: $t0 = 10
+
+cycle : 178
+Executed instruction: addi $s0 $s0 4
+Modified regitsers: $s0 = 1016
+
+cycle : 179
+Executed instruction: lw $t1 0($s0)
+DRAM Request issued: Memory Location: 1016 Row buffer: 0
+
+cycle : 180-181
+DRAM: Column request
+Modified registers: $t1 = 5
+
+cycle : 182
+Executed instruction: add $t2 $t0 $t1
+Modified regitsers: $t2 = 15
+
+cycle : 183
+Executed instruction: sw $t2 0($s0)
+DRAM Request issued: Memory Location: 1016 Row buffer: 0
+
+cycle : 184
+Executed instruction: addi $s1 $s1 1
+Modified regitsers: $s1 = 4
+
+cycle : 185
+Executed instruction: slt $s3 $s1 $s2
+Modified regitsers: $s3 = 1
+
+cycle : 184-185
+DRAM: Column access
+Modified Memory Location: 1016 = 15
+
+cycle : 186
+Executed instruction: bne $s3 $zero sumloop
+
+cycle : 187
+Executed instruction: lw $t0 0($s0)
+DRAM Request issued: Memory Location: 1016 Row buffer: 0
+
+cycle : 188-189
+DRAM: Column request
+Modified registers: $t0 = 15
+
+cycle : 190
+Executed instruction: addi $s0 $s0 4
+Modified regitsers: $s0 = 1020
+
+cycle : 191
+Executed instruction: lw $t1 0($s0)
+DRAM Request issued: Memory Location: 1020 Row buffer: 0
+
+cycle : 192-193
+DRAM: Column request
+Modified registers: $t1 = 6
+
+cycle : 194
+Executed instruction: add $t2 $t0 $t1
+Modified regitsers: $t2 = 21
+
+cycle : 195
+Executed instruction: sw $t2 0($s0)
+DRAM Request issued: Memory Location: 1020 Row buffer: 0
+
+cycle : 196
+Executed instruction: addi $s1 $s1 1
+Modified regitsers: $s1 = 5
+
+cycle : 197
+Executed instruction: slt $s3 $s1 $s2
+Modified regitsers: $s3 = 1
+
+cycle : 196-197
+DRAM: Column access
+Modified Memory Location: 1020 = 21
+
+cycle : 198
+Executed instruction: bne $s3 $zero sumloop
+
+cycle : 199
+Executed instruction: lw $t0 0($s0)
+DRAM Request issued: Memory Location: 1020 Row buffer: 0
+
+cycle : 200-201
+DRAM: Column request
+Modified registers: $t0 = 21
+
+cycle : 202
+Executed instruction: addi $s0 $s0 4
+Modified regitsers: $s0 = 1024
+
+cycle : 203
+Executed instruction: lw $t1 0($s0)
+DRAM Request issued: Memory Location: 1024-1027 Row buffer: 0
+
+cycle : 204-213
+DRAM: Writeback row 0
+
+cycle : 214-223
+DRAM: Active row 1
+
+cycle : 224-225
+DRAM: Column request
+Modified registers: $t1 = 7
+
+cycle : 226
+Executed instruction: add $t2 $t0 $t1
+Modified regitsers: $t2 = 28
+
+cycle : 227
+Executed instruction: sw $t2 0($s0)
+DRAM Request issued: Memory Location: 1024 Row buffer: 1
+
+cycle : 228
+Executed instruction: addi $s1 $s1 1
+Modified regitsers: $s1 = 6
+
+cycle : 229
+Executed instruction: slt $s3 $s1 $s2
+Modified regitsers: $s3 = 1
+
+cycle : 228-229
+DRAM: Column access
+Modified Memory Location: 1024 = 28
+
+cycle : 230
+Executed instruction: bne $s3 $zero sumloop
+
+cycle : 231
+Executed instruction: lw $t0 0($s0)
+DRAM Request issued: Memory Location: 1024 Row buffer: 1
+
+cycle : 232-233
+DRAM: Column request
+Modified registers: $t0 = 28
+
+cycle : 234
+Executed instruction: addi $s0 $s0 4
+Modified regitsers: $s0 = 1028
+
+cycle : 235
+Executed instruction: lw $t1 0($s0)
+DRAM Request issued: Memory Location: 1028 Row buffer: 1
+
+cycle : 236-237
+DRAM: Column request
+Modified registers: $t1 = 8
+
+cycle : 238
+Executed instruction: add $t2 $t0 $t1
+Modified regitsers: $t2 = 36
+
+cycle : 239
+Executed instruction: sw $t2 0($s0)
+DRAM Request issued: Memory Location: 1028 Row buffer: 1
+
+cycle : 240
+Executed instruction: addi $s1 $s1 1
+Modified regitsers: $s1 = 7
+
+cycle : 241
+Executed instruction: slt $s3 $s1 $s2
+Modified regitsers: $s3 = 1
+
+cycle : 240-241
+DRAM: Column access
+Modified Memory Location: 1028 = 36
+
+cycle : 242
+Executed instruction: bne $s3 $zero sumloop
+
+cycle : 243
+Executed instruction: lw $t0 0($s0)
+DRAM Request issued: Memory Location: 1028 Row buffer: 1
+
+cycle : 244-245
+DRAM: Column request
+Modified registers: $t0 = 36
+
+cycle : 246
+Executed instruction: addi $s0 $s0 4
+Modified regitsers: $s0 = 1032
+
+cycle : 247
+Executed instruction: lw $t1 0($s0)
+DRAM Request issued: Memory Location: 1032 Row buffer: 1
+
+cycle : 248-249
+DRAM: Column request
+Modified registers: $t1 = 9
+
+cycle : 250
+Executed instruction: add $t2 $t0 $t1
+Modified regitsers: $t2 = 45
+
+cycle : 251
+Executed instruction: sw $t2 0($s0)
+DRAM Request issued: Memory Location: 1032 Row buffer: 1
+
+cycle : 252
+Executed instruction: addi $s1 $s1 1
+Modified regitsers: $s1 = 8
+
+cycle : 253
+Executed instruction: slt $s3 $s1 $s2
+Modified regitsers: $s3 = 1
+
+cycle : 252-253
+DRAM: Column access
+Modified Memory Location: 1032 = 45
+
+cycle : 254
+Executed instruction: bne $s3 $zero sumloop
+
+cycle : 255
+Executed instruction: lw $t0 0($s0)
+DRAM Request issued: Memory Location: 1032 Row buffer: 1
+
+cycle : 256-257
+DRAM: Column request
+Modified registers: $t0 = 45
+
+cycle : 258
+Executed instruction: addi $s0 $s0 4
+Modified regitsers: $s0 = 1036
+
+cycle : 259
+Executed instruction: lw $t1 0($s0)
+DRAM Request issued: Memory Location: 1036 Row buffer: 1
+
+cycle : 260-261
+DRAM: Column request
+Modified registers: $t1 = 10
+
+cycle : 262
+Executed instruction: add $t2 $t0 $t1
+Modified regitsers: $t2 = 55
+
+cycle : 263
+Executed instruction: sw $t2 0($s0)
+DRAM Request issued: Memory Location: 1036 Row buffer: 1
+
+cycle : 264
+Executed instruction: addi $s1 $s1 1
+Modified regitsers: $s1 = 9
+
+cycle : 265
+Executed instruction: slt $s3 $s1 $s2
+Modified regitsers: $s3 = 0
+
+cycle : 264-265
+DRAM: Column access
+Modified Memory Location: 1036 = 55
+
+cycle : 266
+Executed instruction: bne $s3 $zero sumloop
+
+
+Memory content at the end of the execution:
+
+1000-1003:1
+1004-1007:3
+1008-1011:6
+1012-1015:10
+1016-1019:15
+1020-1023:21
+1024-1027:28
+1028-1031:36
+1032-1035:45
+1036-1039:55
+
+Total execution time in clock cycle : 266
+
+No of row buffer updates : 26

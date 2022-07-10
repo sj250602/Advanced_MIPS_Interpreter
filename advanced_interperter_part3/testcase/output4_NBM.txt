@@ -1,0 +1,14 @@
+Enter the row_access_delay: 10
+Enter the col_access_delay: 2
+
+Every cycle description
+
+cycle : 1
+Executed instruction: addi $t0 $zero 1
+Modified regitsers: $t0 = 1
+
+cycle : 2
+Executed instruction: addi $t1 $zero 2
+Modified regitsers: $t1 = 2
+
+Wrong Input

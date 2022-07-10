@@ -1,0 +1,114 @@
+Enter the row_access_delay: 10
+Enter the col_access_delay: 2
+
+Every cycle description
+
+cycle : 1
+Executed instruction: addi $s0 $zero 900
+Modified regitsers: $s0 = 900
+
+cycle : 2
+Executed instruction: sw $t0 0($s0)
+DRAM Request issued: Memory Location: 900 Row buffer: -1
+
+cycle : 3
+Executed instruction: addi $s1 $zero 1028
+Modified regitsers: $s1 = 1028
+
+cycle : 4
+Executed instruction: addi $t5 $zero 1000
+Modified regitsers: $t5 = 1000
+
+cycle : 3-12
+DRAM: Activate row 0
+
+cycle : 13-14
+DRAM: Column access
+Modified Memory Location: 900 = 0
+
+cycle : 15
+Executed instruction: addi $t0 $zero 1
+Modified regitsers: $t0 = 1
+
+cycle : 16
+Executed instruction: addi $t1 $zero 2
+Modified regitsers: $t1 = 2
+
+cycle : 17
+Executed instruction: addi $t4 $t4 5
+Modified regitsers: $t4 = 5
+
+cycle : 18
+Executed instruction: lw $t2 0($s0)
+DRAM Request issued: Memory Location: 900 Row buffer: 0
+
+cycle : 19
+Executed instruction: addi $t3 $t3 10
+Modified regitsers: $t3 = 10
+
+cycle : 19-20
+DRAM: Column request
+Modified registers: $t2 = 0
+
+cycle : 21
+Executed instruction: add $t3 $t3 $t2
+Modified regitsers: $t3 = 10
+
+cycle : 22
+Executed instruction: sw $t1 0($s1)
+DRAM Request issued: Memory Location: 1028 Row buffer: 0
+
+cycle : 23-32
+DRAM: Writeback row 0
+
+cycle : 33-42
+DRAM: Activate row 1
+
+cycle : 43-44
+DRAM: Column access
+Modified Memory Location: 1028 = 2
+
+cycle : 45
+Executed instruction: lw $t8 0($s1)
+DRAM Request issued: Memory Location: 1028 Row buffer: 1
+
+cycle : 46-47
+DRAM: Column request
+Modified registers: $t8 = 2
+
+cycle : 48
+Executed instruction: sw $t4 0($t5)
+DRAM Request issued: Memory Location: 1000 Row buffer: 1
+
+cycle : 49-58
+DRAM: Writeback row 1
+
+cycle : 59-68
+DRAM: Activate row 0
+
+cycle : 69-70
+DRAM: Column access
+Modified Memory Location: 1000 = 5
+
+cycle : 71
+Executed instruction: lw $t6 0($t5)
+DRAM Request issued: Memory Location: 1000 Row buffer: 0
+
+cycle : 72-73
+DRAM: Column request
+Modified registers: $t6 = 5
+
+cycle : 74
+Executed instruction: add $t7 $t3 $t6
+Modified regitsers: $t7 = 15
+
+
+Memory content at the end of the execution:
+
+1000-1003:5
+1028-1031:2
+900-903:0
+
+Total execution time in clock cycle : 74
+
+No of row buffer updates : 8

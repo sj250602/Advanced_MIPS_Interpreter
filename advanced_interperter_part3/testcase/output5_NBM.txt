@@ -1,0 +1,45 @@
+Enter the row_access_delay: 10
+Enter the col_access_delay: 2
+
+Every cycle description
+
+cycle : 1
+Executed instruction: addi $t1 $t1 30
+Modified regitsers: $t1 = 30
+
+cycle : 2
+Executed instruction: addi $t5 $t5 90
+Modified regitsers: $t5 = 90
+
+cycle : 3
+Executed instruction: sub $t3 $t3 -895
+Modified regitsers: $t3 = 895
+
+cycle : 4
+Executed instruction: j multiplication
+
+cycle : 5
+Executed instruction: mul $t1 $t1 $t1
+Modified regitsers: $t1 = 900
+
+cycle : 6
+Executed instruction: bne $t1 $t5 subtraction
+
+cycle : 7
+Executed instruction: addi $t1 $t1 -5
+Modified regitsers: $t1 = 895
+
+cycle : 8
+Executed instruction: beq $t1 $t3 sou
+
+cycle : 9
+Executed instruction: slt $s0 $t1 $t3
+Modified regitsers: $s0 = 0
+
+
+Memory content at the end of the execution:
+
+
+Total execution time in clock cycle : 9
+
+No of row buffer updates : 0

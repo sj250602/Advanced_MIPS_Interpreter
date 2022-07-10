@@ -1,0 +1,13 @@
+addition:   
+	addi $t1, $t1, 30
+	addi $t5,$t5,90
+	sub $t3,$t3,-895
+	j multiplication
+	subtraction:
+	addi	 $t1	, $t1,	-5
+	beq $t1,$t3,sou
+multiplication:
+	mul $t1, $t1, $t1
+	bne $t1,$t5,subtraction
+sou:
+	slt $s0,$t1,$t3
